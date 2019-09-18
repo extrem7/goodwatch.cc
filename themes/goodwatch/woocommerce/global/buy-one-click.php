@@ -1,0 +1,1 @@
+<a href="#" class="buy-click mt-1" data-toggle="modal" data-target="#one-click" data-id="<? the_ID() ?>"><? pll_e('Купить в 1 клик') ?></a>

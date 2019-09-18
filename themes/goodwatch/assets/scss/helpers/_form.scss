@@ -1,0 +1,236 @@
+.button {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: #fff;
+  font-size: rem(14px);
+  font-weight: 700;
+  border: 1px solid transparent;
+  padding: 0.21rem 0.9375rem;
+  line-height: 1.5;
+  border-radius: rem(4px);
+  transition: transform 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out!important;
+  &.border-radius-none {
+    border-radius: 0;
+  }
+  &.transform-hover {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 7px rgba(88, 88, 88, 0.38);
+    }
+  }
+}
+
+.btn-orange {
+  background-color: $orange;
+  border-color: $orange;
+  color: #ffffff;
+  font-weight: 600;
+  &:hover {
+    color: #fff;
+    border-color: #ffaf5f;
+    background-color: #ffaf5f;
+  }
+}
+
+.btn-black {
+  background-color: #0e0e0e;
+  border-color: #0e0e0e;
+  color: #ffffff;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+.btn-outline-black {
+  background-color: transparent;
+  border-color: #000000;
+  text-decoration: none;
+  color: #000000;
+  &:hover {
+    color: #fff!important;
+    border-color: $red;
+    background-color: $red;
+  }
+}
+
+.btn-white {
+  background-color: #ffffff;
+  border-color: #fff;
+  color: #000;
+  &:hover {
+    color: #fff;
+    border-color: $orange;
+    background-color: $orange;
+  }
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  &:hover {
+    color: #fff!important;
+    border-color: $red;
+    background-color: $red;
+  }
+}
+
+.btn-red {
+  border-color: $red;
+  background-color: $red;
+  color: #ffffff;
+  &:hover {
+    color: #fff;
+    background-color: #ff9090;
+    border-color: #ff9090;
+  }
+}
+
+button.icon {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.add-to-cart {
+  display: block;
+}
+
+.control-form {
+  display: block;
+  width: 100%;
+  height: rem(35px);
+  padding: .275rem .75rem;
+  font-size: rem(14px);
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #c7c7c7;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color .4s ease-in-out,box-shadow .15s ease-in-out;
+  &:focus {
+    border-color: $red
+  }
+  &.material {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    border: 0;
+    &.material-lg {
+      height: rem(50px);
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &.white-border {
+    border-color: #fff;
+    color: #fff;
+    @include placeholder() {
+      color: #fff;
+      opacity: 1;
+    }
+    &:focus {
+      border-color: $red;
+    }
+  }
+  @include placeholder() {
+    color: #000;
+    opacity: 1;
+  }
+}
+
+.input-search {
+  border: 1px solid #000000;
+  font-size: 1rem;
+  color: #0e0e0e;
+  height: rem(36px);
+  padding-right: 1.75rem;
+}
+
+.custom-select {
+  background: url("../img/icons/chevron-down-solid.svg")  no-repeat right .45rem center/9px 13px;
+  padding-right: 23px;
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+label {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  color: #000;
+  .required {
+    color: #e22e2e;
+  }
+}
+
+//checked
+.custom-control-label::before {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #c7c7c7;
+  background-color: transparent;
+}
+.custom-control-label::after {
+  width: 15px;
+  height: 15px;
+}
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+}
+.custom-control-input {
+  top: 5px;
+  left: 1px;
+}
+.custom-control-label {
+  color: #0e0e0e;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #fff!important;
+  border: 1px solid #bbcac8;
+  box-shadow: none!important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url('../img/icons/check.svg');
+  background-size: 14px 9px;
+  box-shadow: none!important;
+}
+
+.box-form {
+  background-color: #ececec;
+}
+
+@media (max-width: 768px) {
+  .button {
+    &.btn-lg {
+      font-size: 1rem;
+    }
+  }
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  select,
+  textarea,
+  input {
+    font-size: 1rem!important;
+  }
+}

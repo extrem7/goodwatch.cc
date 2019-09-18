@@ -1,0 +1,111 @@
+.box-contact {
+  padding: rem(30px) rem(15px);
+  margin-top: 3rem;
+  .contact-form {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    input, textarea {
+      text-align: center;
+    }
+    button {
+      width: 138px;
+    }
+    input {
+      max-width: 175px;
+    }
+  }
+}
+
+.contact-info {
+  max-width: 685px;
+  margin: 0 auto;
+  > div {
+    margin-bottom: 1.2rem;
+  }
+  i {
+    font-size: rem(30px);
+    color: $red;
+  }
+  a {
+    color: inherit;
+    display: block;
+    & + a {
+      margin-top: 0.2rem;
+    }
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.advantages {
+  .advantage {
+    margin-bottom: 2.5rem;
+    span {
+      padding-left: 20px;
+      display: block;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: $red;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .contact-info {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .advantages {
+    .advantage {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .box-contact {
+    .contact-form {
+      .form-group {
+        input {
+          max-width: 100%;
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.widget-block {
+  margin-top: 2rem;
+  i {
+    color: $red;
+    font-size: 35px;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+    word-break: break-word;
+    &+ a {
+      margin-left: 2rem;
+    }
+  }
+}
