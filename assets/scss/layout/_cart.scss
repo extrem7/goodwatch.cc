@@ -1,0 +1,161 @@
+.page-template-cart {
+
+  .actions {
+    margin-top: rem(22px);
+  }
+
+  .shop_table {
+    width: 100%;
+    margin-top: 2.0625rem;
+    font-size: 1rem;
+    color: #0e0e0e;
+
+    tr {
+      border-bottom: 1px solid #c7c7c7;
+      td {
+        padding: rem(12px);
+      }
+    }
+    th {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0e0e0e;
+      padding: rem(8px) rem(12px);
+    }
+
+    .product-price {
+      text-align: center;
+    }
+
+    .product-remove {
+      a.remove {
+        font-size: 1rem;
+        color: #0e0e0e;
+        display: block;
+        text-align: center;
+        padding: rem(10px);
+      }
+    }
+
+    .product-thumbnail {
+      width: 20%;
+    }
+
+    .product-name {
+      a {
+        font-size: rem(20px);
+        text-transform: uppercase;
+        color: #000000;
+      }
+    }
+
+    .articul {
+      display: block;
+      font-size: rem(12px);
+      color: #a3a3a3;
+    }
+
+    .photo {
+      width: 87px;
+      height: 87px;
+      background: no-repeat center;
+      background-size: contain;
+      margin: 0 auto;
+    }
+  }
+
+  .coupon {
+    input {
+      height: 30px;
+    }
+  }
+}
+
+.subtotal {
+  background-color: #f5f5f5;
+  padding: 0 rem(15px) rem(16px) rem(15px);
+  .sub-total {
+    width: 100%;
+    font-size: rem(13px);
+    color: #0e0e0e;
+    tr {
+      &.cart-discount {
+        th {
+          font-weight: 400;
+        }
+      }
+    }
+    .red-color {
+      strong {
+        font-weight: 400;
+      }
+    }
+    th,
+    td {
+      padding: rem(5px) rem(6px);
+    }
+    tr:last-child {
+      border-top: 1px solid #707070;
+      td {
+        padding-top: rem(15px);
+      }
+    }
+  }
+}
+
+.checkout {
+  margin-top: rem(40px);
+  textarea {
+    height: 86px!important;
+  }
+  .title {
+    padding-top: rem(16px);
+  }
+  .coupon {
+    font-size: rem(13px);
+    margin-bottom: rem(13px);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-template-cart {
+    .shop_table {
+      .product-name {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .page-template-cart {
+    .actions {
+      text-align: center;
+    }
+    .quantity {
+      margin: rem(15px) 0;
+    }
+    .shop_table {
+      th {
+        display: none;
+      }
+      .product-thumbnail {
+        width: 100%;
+      }
+      tr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem 0;
+        td {
+          padding: 0.2rem 0.6875rem;
+        }
+      }
+    }
+  }
+  .subtotal {
+    margin-top: 3rem;
+  }
+}
+
