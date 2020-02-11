@@ -26,7 +26,7 @@ echo $isCity ? '<div class="col-sm-6 col-lg-4">' : '';
             <img data-src="<?= get_the_post_thumbnail_url(null,'medium') ?>" alt="<?= $title ?>" title="<?= $title ?>"  class="img-fluid owl-lazy">
         </a>
         <div class="product-information">
-            <a href="<? the_permalink() ?>" class="product-name"><? the_title() ?></a>
+            <a href="<? the_permalink() ?>" class="product-name"><? watch()->woo()->trimTitle(get_the_title()); ?></a>
 			<? woocommerce_template_loop_rating() ?>
             <div class="product-code">Код: <? the_sku() ?></div>
             <div class="d-flex align-items-end justify-content-between product-action">

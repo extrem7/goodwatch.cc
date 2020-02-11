@@ -8,7 +8,7 @@
                 <div class="notices-area w-100"><? wc_print_notices() ?></div>
                 <div class="premmerce-filter-ajax-container">
                     <?php do_action('woocommerce_before_shop_loop'); ?>
-                    <div class="row">
+                    <div class="row catalog">
                         <?
                         if (wc_get_loop_prop('total')) {
                             while (have_posts()) {

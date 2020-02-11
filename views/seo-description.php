@@ -11,6 +11,8 @@ $ruleUnique = !in_array(null, [$term->description, $ruleDescription]) && (strpos
 
 $seoDescription = is_filtered() && $ruleUnique && $ruleDescription ? $ruleDescription : get_field('seo_text', $term);
 ?>
+
+<? if(get_query_var('paged') > 1 || is_tax("product_brand") && is_gender()) : $seoDescription = ''; endif; ?>
     <div class="seo-text dynamic-content short-text"><?= $seoDescription ?></div>
 <? if ($seoDescription): ?>
     <div class="show-full-text text-right"><a href="#" class="link"><? pll_e('Читать полностью') ?>...</a>

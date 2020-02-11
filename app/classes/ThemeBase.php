@@ -25,6 +25,7 @@ class ThemeBase
         $this->ACF();
         $this->WPML();
         $this->hiddenRedirects();
+		$this->seoFix();
     }
 
     private function themeSetup()
@@ -335,7 +336,33 @@ class ThemeBase
         pll_register_string('Страница не найдена', 'Страница не найдена');
         pll_register_string('Вернитесь на главную страницу <br> или воспользуйтесь поиском', 'Вернитесь на главную страницу <br> или воспользуйтесь поиском');
         pll_register_string('На главную', 'На главную');
+		
+		pll_register_string('- страница', '- страница');
+		pll_register_string('Мы в социальных сетях', 'Мы в социальных сетях');
+		
     }
+	
+	private function seoFix() {
+		remove_action('wp_head', 'rel_canonical');
+		add_filter( 'wpseo_canonical', '__return_false' );
+		
+		function addPage($title) {
+			global $sitepress;
+    		if (is_product_category()) {
+ 		 		if (get_query_var('paged') > 1) {
+			 		if($sitepress->get_current_language() == 'ru') {
+       		   			$title .= ' - страница '.get_query_var('paged');
+			 		} else {
+			 			$title .= ' - сторінка '.get_query_var('paged');
+			 		}
+    			}
+ 			}
+			return $title;
+		}
+		
+		add_filter('wpseo_title','addPage', 10);
+		add_filter('wpseo_metadesc','addPage', 10);
+	}
 
     private function hiddenRedirects()
     {

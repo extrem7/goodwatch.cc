@@ -28,7 +28,7 @@
         </section>
         <section class="box-info">
             <div class="owl-carousel owl-theme owl-catalog owl-custom-dot" id="last">
-	            <? foreach ( get_field( 'new_products' ) as $post ):$product = wc_get_product( $post ) ?>
+	            <? foreach ( get_field( 'popular_products' ) as $post ):$product = wc_get_product( $post ) ?>
                     <div class="item">
 			            <? wc_get_template_part( 'content', 'product' ); ?>
                     </div>
@@ -78,7 +78,7 @@
             <div class="main-title title text-center mb-3"><? pll_e('Наши бренды') ?></div>
             <div class="owl-carousel owl-theme owl-brand">
 				<? foreach ( get_field( 'brands' ) as $brand ):
-					$img = get_term_meta( $brand->term_id, 'pwb_brand_image', true );
+					$img = get_term_meta( $brand->term_id, 'thumbnail_id', true );
 					?>
                     <div class="item">
                         <a href="<?= get_term_link( $brand ) ?>"><?= wp_get_attachment_image( $img, 'full',false,['class'=>'owl-lazy'] ); ?></a>
@@ -92,7 +92,18 @@
                     <div class="box-info h-100">
                         <div class="red-color"><? pll_e('Гарантия') ?></div>
                         <div class="title main-title"><? pll_e('Сертифицированные товары') ?></div>
-                        <div class="mt-3"><? the_field( 'guarantee' ) ?></div>
+                          <div class="mt-3"><? the_field( 'guarantee' ) ?>
+							<div class="owl-carousel owl-theme owl-cert" id="cert">
+								<? foreach ( get_field( 'gallery_certificat' ) as $img ): ?>
+									 <div class="item text-center">
+										<a href="<?= $img['sizes']['large'] ?>" data-fancybox="gallery-certeficat">
+											<img src="<?= $img['sizes']['medium'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>"
+												 class="img-fluid">
+										</a>
+									</div>
+								<? endforeach; ?>
+							</div>
+						</div>
                         <img src="<?= path() ?>assets/img/icons/garanty.svg" class="mt-3" alt="guarantee">
                     </div>
                 </div>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="it-rating" content="it-rat-96ce2df79b44e83b1c096943ce4efc94"/>
     <link rel="preload"
           href="https://goodwatch.cc/wp-content/themes/goodwatch/assets/node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
           as="font" type="font/woff2" crossorigin>
@@ -24,6 +23,10 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NSN2ZBC');</script>
     <!-- End Google Tag Manager -->
+	<!--custom canonical-->
+	<? if(is_product_category() || is_tax("product_brand") || is_archive()): ?>
+	<link rel="canonical" data href="https://goodwatch.cc<?php echo $_SERVER['REQUEST_URI'];?>">
+	<? endif; ?>
 </head>
 <body <? body_class() ?>>
 <!-- Google Tag Manager (noscript) -->

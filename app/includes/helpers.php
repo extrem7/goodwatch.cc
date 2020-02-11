@@ -259,6 +259,19 @@ function sort_by_key( $array, $on, $order = SORT_ASC ) {
 	return $new_array;
 }
 
+function is_gender()
+{
+    global $wp_query;
+    $tax = $wp_query->get('tax_query');
+    unset($tax['relation']);
+    foreach ($tax as $key => $val) {
+        if ($val['taxonomy'] === 'pa_gender') {
+            return true;
+        }
+    }
+    return false;
+}
+
 // lifehacks (мне стыдно за это)
 
 function pll__($string)

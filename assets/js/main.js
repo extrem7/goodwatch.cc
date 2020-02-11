@@ -335,8 +335,17 @@
 
             }
         });
+
+		$('.owl-cert').owlCarousel({
+        	margin: 0,
+        	dots: false,
+        	nav: true,
+        	navText: navText,
+        	items: 1,
+        	lazyLoad: true,
+    	});
         $('.owl-catalog').owlCarousel({
-            loop: true,
+            loop: false,
             margin: 30,
             nav: true,
             items: 4,
@@ -348,10 +357,10 @@
             },
             responsive: {
                 0: {
-                    items: 1,
-                    dots: false
+                   items: 8,
+                   // dots: false
                 },
-                576: {
+                768: {
                     items: 2,
                     dots: false
                 },
@@ -370,6 +379,8 @@
 
             }
         });
+
+
         $('.owl-banner, .owl-popular-category').owlCarousel({
             loop: false,
             margin: 10,
@@ -385,7 +396,7 @@
             },
             responsive: {
                 0: {
-                    items: 1,
+                    items: 2,
                     dots: false
                 },
                 768: {
@@ -423,6 +434,8 @@
                 }
             }
         });
+
+
         $('.owl-category').owlCarousel({
             margin: 0,
             dots: true,
@@ -431,23 +444,29 @@
             lazyLoad: true,
             responsive: {
                 0: {
-                    items: 2
+                    items: 8
                 },
-                475: {
-                    items: 3
-                },
+                //475: {
+                  //  items: 3
+                //},
                 768: {
                     items: 4,
                 },
                 992: {
-                    items: 4,
+                    items: 5,
                 },
                 1199: {
                     items: 6
                 }
             }
         });
-    }
+
+		if(window.innerWidth < 768) {
+			$('.owl-catalog, .owl-popular-category, .owl-category, .banner-slider').trigger('destroy.owl.carousel');
+		 }
+
+	}
+
 
     $(() => {
         if (window.innerWidth > 768) {

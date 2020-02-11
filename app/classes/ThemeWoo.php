@@ -126,6 +126,12 @@ class ThemeWoo
         $this->specialOffer();
     }
 
+	public function trimTitle($title) {
+		$arr1 = array("Мужские часы ","Годинник чоловічий ","Женские часы ","Годинник жіночій ","Женские умные часы ", "Розумний годинник   		жіночій ");	
+		
+		echo str_replace($arr1,"",$title); 
+	}
+	
     public function buyOneClick()
     {
         $response = [];
@@ -459,11 +465,11 @@ class ThemeWoo
 
         add_action('wp_head', function () {
             $keywords = "";
-            if (is_product_category() || is_tax('pwb-brand')) {
+            if (is_product_category() || is_tax('product_brand')) {
                 $meta = get_term_meta(get_queried_object()->term_id, 'keywords', true);
                 $keywords = '<meta name="keywords" content="' . $meta . '">' . "\n";
             }
-            if (is_tax('pwb-brand')) {
+            if (is_tax('product_brand')) {
                 $meta = get_queried_object()->description;
                 echo '<meta name="description" content="' . $meta . '">' . "\n";
             }
@@ -560,7 +566,7 @@ class ThemeWoo
     private function perPageSorting()
     {
         global $limit;
-        $limit = 9;
+        $limit = 40;
         if (!isset($_COOKIE['perpage'])) {
             setcookie('perpage', $limit, time() + (10 * 365 * 24 * 60 * 60), '/');
         } else {
@@ -574,8 +580,8 @@ class ThemeWoo
         }
         add_action('pre_get_posts', function ($query) {
             global $limit;
-            if (!is_admin() && (is_shop() || is_product_category() || is_tax('pwb-brand')) && $query->is_main_query()) {
-                $query->set('posts_per_page', $limit);
+            if (!is_admin() && (is_shop() || is_product_category() || is_tax('product_brand')) && $query->is_main_query()) {
+                $query->set('posts_per_page', 40);
             }
         });
     }

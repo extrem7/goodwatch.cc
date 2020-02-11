@@ -1,6 +1,6 @@
 <?php
 global $post, $product;
-$brands  = wp_get_post_terms( get_the_ID(), 'pwb-brand' );
+$brands  = wp_get_post_terms( get_the_ID(), 'product_brand' );
 if ( ! empty( $brands ) ):
 	$brand = array_shift( $brands );
 	$img = get_term_meta( $brand->term_id, 'pwb_brand_image', true ); ?>
