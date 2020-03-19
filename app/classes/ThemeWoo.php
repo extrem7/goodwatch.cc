@@ -115,6 +115,7 @@ class ThemeWoo
             get_template_part('views/seo-description');
         });
 
+
         add_action('wp_ajax_buyOneClick', [$this, 'buyOneClick']);
         add_action('wp_ajax_nopriv_buyOneClick', [$this, 'buyOneClick']);
         $this->metaTags();
@@ -127,11 +128,11 @@ class ThemeWoo
     }
 
 	public function trimTitle($title) {
-		$arr1 = array("Мужские часы ","Годинник чоловічий ","Женские часы ","Годинник жіночій ","Женские умные часы ", "Розумний годинник   		жіночій ");	
-		
-		echo str_replace($arr1,"",$title); 
+		$arr1 = array("Мужские часы ","Годинник чоловічий ","Женские часы ","Годинник жіночій ","Женские умные часы ", "Розумний годинник   		жіночій ");
+
+		echo str_replace($arr1,"",$title);
 	}
-	
+
     public function buyOneClick()
     {
         $response = [];
@@ -470,8 +471,8 @@ class ThemeWoo
                 $keywords = '<meta name="keywords" content="' . $meta . '">' . "\n";
             }
             if (is_tax('product_brand')) {
-                $meta = get_queried_object()->description;
-                echo '<meta name="description" content="' . $meta . '">' . "\n";
+                //$meta = get_queried_object()->description;
+                //echo '<meta name="description" content="' . $meta . '">' . "\n";
             }
             echo $keywords;
         }

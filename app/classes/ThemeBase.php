@@ -336,16 +336,27 @@ class ThemeBase
         pll_register_string('Страница не найдена', 'Страница не найдена');
         pll_register_string('Вернитесь на главную страницу <br> или воспользуйтесь поиском', 'Вернитесь на главную страницу <br> или воспользуйтесь поиском');
         pll_register_string('На главную', 'На главную');
-		
+
 		pll_register_string('- страница', '- страница');
 		pll_register_string('Мы в социальных сетях', 'Мы в социальных сетях');
-		
+
     }
-	
+
 	private function seoFix() {
 		remove_action('wp_head', 'rel_canonical');
 		add_filter( 'wpseo_canonical', '__return_false' );
-		
+
+		add_filter('wpseo_robots','custom_robots');
+
+		function custom_robots($output) {
+			//var_dump($output);
+     		if(is_tax('product_brand') && !is_filtered()) {
+     		return str_replace('noindex,follow','index,follow',$output);
+			} else if(is_filtered()) {
+				return $output;
+			}
+		}
+
 		function addPage($title) {
 			global $sitepress;
     		if (is_product_category()) {
@@ -359,7 +370,7 @@ class ThemeBase
  			}
 			return $title;
 		}
-		
+
 		add_filter('wpseo_title','addPage', 10);
 		add_filter('wpseo_metadesc','addPage', 10);
 	}
