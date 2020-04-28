@@ -339,6 +339,10 @@ class ThemeBase
 
 		pll_register_string('- страница', '- страница');
 		pll_register_string('Мы в социальных сетях', 'Мы в социальных сетях');
+		
+		pll_register_string('Товар', 'Товар');
+		pll_register_string('Цена', 'Цена');
+		pll_register_string('Цены', 'Цены');
 
     }
 

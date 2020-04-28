@@ -536,8 +536,11 @@ main {
   .content {
     padding-top: rem(30px);
   }
+  body {
+    padding-top: 76px;
+  }
   body.sticky {
-    padding-top: 95px;
+   // padding-top: 95px;
   }
 }
 

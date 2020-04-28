@@ -1,4 +1,15 @@
-<? if ( $related_products ) : ?>
+<?php 
+global $product;
+if ($cross = $product->get_cross_sell_ids()) {
+    $related_products = array_map(function (WP_Post $post) {
+        return wc_get_product($post);
+    }, get_posts([
+        'post_type' => 'product',
+        'post__in' => $cross
+    ]));
+}
+
+ if ( $related_products ) : ?>
     <div class="col-12 mt-5">
         <div class="title main-title line text-center"><? pll_e('Похожие товары') ?></div>
         <div class="owl-carousel owl-theme owl-catalog owl-custom-dot">
@@ -11,3 +22,4 @@
     </div>
 <?php endif;
 wp_reset_postdata();
+wp_reset_query();

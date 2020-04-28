@@ -164,7 +164,8 @@
 
         slick() {
             if ($().slick) {
-                if (window.innerWidth > 767) {
+                if (window.screen.width > 767) {
+					console.log(2);
                     $(".thumbnails").slick({
                         infinite: false,
                         vertical: true,
@@ -173,8 +174,10 @@
                         nextArrow: "<button type=\"button\" class=\"slick-prev\"><i class='fas fa-chevron-down'></i></button>",
                     });
                 } else {
+					console.log(1);
                     $(".thumbnails").slick({
                         infinite: false,
+						vertical: false,
                         slidesToShow: 4,
                         prevArrow: "<button type=\"button\" class=\"slick-prev\"><i class='fas fa-chevron-left'></i></button>",
                         nextArrow: "<button type=\"button\" class=\"slick-prev\"><i class='fas fa-chevron-right'></i></button>",
@@ -301,7 +304,7 @@
             $(".header").removeClass('sticky-header');
         }
 
-        if ($(this).scrollTop() > 56 && window.innerWidth <= 768 && !$('.header-bottom').hasClass('active')) {
+        if ($(this).scrollTop() > 92 && window.innerWidth <= 768 && !$('.header-bottom').hasClass('active')) {
             $(".header").addClass('sticky-mob-header');
             $("body").addClass('sticky');
         } else {
@@ -359,6 +362,7 @@
                 0: {
                    items: 8,
                    // dots: false
+					loop: false
                 },
                 768: {
                     items: 2,
@@ -460,9 +464,8 @@
                 }
             }
         });
-
-		if(window.innerWidth < 768) {
-			$('.owl-catalog, .owl-popular-category, .owl-category, .banner-slider').trigger('destroy.owl.carousel');
+		if(window.screen.width < 768) {
+			$('.owl-catalog, .owl-popular-category, .owl-category').trigger('destroy.owl.carousel');
 		 }
 
 	}
@@ -472,6 +475,7 @@
         if (window.innerWidth > 768) {
             owl();
         }
+
         $('*[data-src]').each(function () {
             if (!$(this).closest('.owl-carousel').length) $(this).Lazy({
                 placeholder: ''

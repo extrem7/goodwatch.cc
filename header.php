@@ -87,21 +87,23 @@ wpml_fix_start();
                     <span><? pll_e('Категории товаров') ?></span>
                     <i class="fas fa-bars"></i>
                 </div>
-                <ul class="catalog-menu pb-0 catalog-main-menu">
-                    <? while (have_rows('header_menu', lang())):the_row();
-                        $active = get_sub_field('link') == current_location() ? 'active' : '';
-                        ?>
-                        <li class="dropdown">
-                            <a href="<? the_sub_field('link') ?>"
-                               class="<?= $active ?>"><? the_sub_field('title') ?></a>
-                        </li>
-                    <? endwhile; ?>
-                </ul>
-                <? wp_nav_menu([
-                    'menu' => 'categories',
-                    'container' => null,
-                    'menu_class' => 'catalog-menu main-slide-menu'
-                ]); ?>
+				<div class="wrapper-mob">
+					<ul class="catalog-menu pb-0 catalog-main-menu">
+						<? while (have_rows('header_menu', lang())):the_row();
+							$active = get_sub_field('link') == current_location() ? 'active' : '';
+							?>
+							<li class="dropdown">
+								<a href="<? the_sub_field('link') ?>"
+								   class="<?= $active ?>"><? the_sub_field('title') ?></a>
+							</li>
+						<? endwhile; ?>
+					</ul>
+					<? wp_nav_menu([
+						'menu' => 'categories',
+						'container' => null,
+						'menu_class' => 'catalog-menu main-slide-menu'
+					]); ?>
+				</div>
             </div>
             <div class="menu-container">
                 <?= $menu ?>

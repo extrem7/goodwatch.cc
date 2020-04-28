@@ -23,6 +23,31 @@
                 </div>
             </div>
         </div>
+		<?php
+			$category = get_queried_object();
+			$cat_id = get_term($category->term_id);
+		    $slug = $cat_id->slug;
+			$products = wc_get_products( array( 'status' => 'publish', 'category' => $slug, 'posts_per_page' => 5 ) );
+			if($products):
+		?>
+		<div class="dynamic-content">
+			<h3><?php pll_e('Цены'); ?> на <?php woocommerce_page_title(); ?></h3>
+		</div>
+		<div class="table-responsive mt-3">
+			<table class="table table-striped">
+				<tr>
+					<th><?php pll_e('Товар'); ?></th>
+					<th><?php pll_e('Цена'); ?></th>
+				</tr>
+				<?php foreach ( $products as $product ):?>
+				<tr>
+					<td><?php echo $product->get_title(); ?></td>
+					<td><?php echo $product->get_price(); ?></td>
+				</tr>
+				<? endforeach; ?>
+			</table>
+		</div>
+		<?php endif; ?>
         <div style="display: none" itemscope itemtype="http://schema.org/Product">
             <p itemprop="Name"><?= get_queried_object()->name ?></p>
             <div itemtype="http://schema.org/AggregateOffer" itemscope="" itemprop="offers">

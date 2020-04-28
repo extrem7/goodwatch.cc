@@ -157,14 +157,13 @@
 }
 
 .dynamic-content {
-  h1,
-  h2,h3,h4,h5 {
+  h1,h2,h3,h4,h5 {
     margin: rem(10px) 0;
     font-size: 1rem;
     color: #000000;
     font-weight: 700;
   }
-    h4 {
+  h4 {
     font-weight: 600;
     font-style: italic;
   }
@@ -203,6 +202,14 @@
     }
   }
 }
+
+.dynamic-content p {
+  margin-bottom: 15px;
+}
+.dynamic-content ul {
+  margin-bottom: 15px;
+}
+
 
 .breadcrumbs {
   margin-top: rem(34px);
