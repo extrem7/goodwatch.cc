@@ -448,7 +448,7 @@
             lazyLoad: true,
             responsive: {
                 0: {
-                    items: 8
+                    items: 10
                 },
                 //475: {
                   //  items: 3

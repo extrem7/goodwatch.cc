@@ -29,6 +29,12 @@ get_header(); ?>
                     </div>
                     <div class="separator mt-3 mb-3"></div>
 					<? wc_get_template_part( 'single-product/short-description' ) ?>
+                    <? if ( $product->is_on_sale() ): ?>
+                    <div class="timer">
+                        <div class="title red-color main-title text-center mb-3">До конца акции осталось</div>
+                        <script src="//megatimer.ru/get/b7b5c1dfa4892c2d3ac0059702560ef1.js"></script>
+                    </div>
+                    <? endif; ?>
                     <div class="separator mt-3 mb-3"></div>
                     <div class="product-delivery-payment">
 						<? while ( have_rows( 'details', lang() ) ):the_row() ?>
