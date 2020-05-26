@@ -15,7 +15,8 @@ $class  = 'comment' . ( $hidden ? ' hidden' : '' );
         </div>
     </div>
     <div class="date" itemprop="datePublished" content="<? comment_date( 'Y-m-d' ) ?>"><? comment_date( 'd F Y' ) ?></div>
-    <div class="comment-content">
+    <div class="comment-content" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="GoodWatch">
         <div class="text" itemprop="description"><? comment_text()?></div>
         <div class="row">
             <div class="col-md-12 col-xl-3">

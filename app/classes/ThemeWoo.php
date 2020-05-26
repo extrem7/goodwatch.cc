@@ -213,7 +213,7 @@ class ThemeWoo
     {
         global $wpdb;
         $tax = get_queried_object();
-
+        /*
         $args = [
             'meta_query' => [
                 [
@@ -221,7 +221,7 @@ class ThemeWoo
                     'value' => 'instock'
                 ]
             ]
-        ];
+        ];*/
         if (is_tax()) {
             $args['tax_query'] = [
                 [
