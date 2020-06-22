@@ -344,6 +344,8 @@ class ThemeBase
 		pll_register_string('Цена', 'Цена');
 		pll_register_string('Цены', 'Цены');
 
+        pll_register_string('Адрес', 'Адрес');
+
     }
 
 	private function seoFix() {

@@ -40,16 +40,20 @@ global $product;
             </div>
         </div>
         <div class="last-review">
+            <!--
             <div class="d-flex align-items-center justify-content-between">
                 <div class="medium-title title"><? pll_e('Последние отзывы') ?></div>
                 <button class="button btn-outline-black" id="write-review"><? pll_e('Написать отзыв') ?></button>
             </div>
-			<? $comments = get_comments( [
-				'parent'  => 0,
-				'post_id' => get_the_ID(),
-				'status'  => 'approve',
-				'number'  => 2
-			] );
+            -->
+
+            <!--
+			<? /*$comments = get_comments( [
+				//'parent'  => 0,
+				//'post_id' => get_the_ID(),
+				//'status'  => 'approve',
+				//'number'  => 2
+			//] );
 			if ( ! empty( $comments ) ):
 				?>
                 <ul class="reviews">
@@ -60,8 +64,9 @@ global $product;
                 </ul>
 			<? else: ?>
                 <p class="woocommerce-noreviews"><? _e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
-			<? endif; ?>
-            <div id="reviews" class="woocommerce-Reviews" style="display: none">
+			<? endif; */?>
+            -->
+            <div id="reviews" class="woocommerce-Reviews" style="display: block">
                 <div id="review_form_wrapper">
                     <div id="review_form">
                         <div id="respond" class="comment-respond">

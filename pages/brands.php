@@ -4,7 +4,7 @@
         <div class="brand-list row">
             <? $brands = get_terms('product_brand');
             foreach ($brands as $brand):
-                $img = get_field('pwb_brand_banner', $brand);
+                $img = get_field('pwb_brand_banner', $brand); 
                 if (!$img) {
                     continue;
                 }

@@ -32,7 +32,7 @@ get_header(); ?>
                     <? if ( $product->is_on_sale() ): ?>
                     <div class="timer">
                         <div class="title red-color main-title text-center mb-3">До конца акции осталось</div>
-                        <script src="//megatimer.ru/get/b7b5c1dfa4892c2d3ac0059702560ef1.js"></script>
+                        <script src="https://megatimer.ru/get/8d336442e3c5984b57655d6ad122c03a.js"></script>
                     </div>
                     <? endif; ?>
                     <div class="separator mt-3 mb-3"></div>
