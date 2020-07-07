@@ -22,11 +22,11 @@ $class  = 'comment' . ( $hidden ? ' hidden' : '' );
             <div class="col-md-12 col-xl-3">
                 <div class="bold"><? pll_e('Достоинства') ?>:</div>
             </div>
-            <div class="col-md-12 col-xl-9"><? the_field( 'advantages', $comment ) ?></div>
+            <div class="col-md-12 col-xl-9"><? the_field( 'disadvantages', $comment ) ?></div>
             <div class="col-md-12 col-xl-3">
                 <div class="bold"><? pll_e('Недостатки') ?>:</div>
             </div>
-            <div class="col-md-12 col-xl-9"><? the_field( 'disadvantages', $comment ) ?>
+            <div class="col-md-12 col-xl-9"><? the_field( 'advantages', $comment ) ?>
             </div>
         </div>
     </div>

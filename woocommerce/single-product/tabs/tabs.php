@@ -1,33 +1,19 @@
 <?php
 global $product;
 ?>
-<div class="col-12 product-tab">
+<div class="product-tab">
     <div class="wrapper-tab">
         <div class="wrapper-tab-contain">
             <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="active" id="description" data-toggle="tab" href="#description-tab"><? pll_e('Описание') ?></a>
+                <li class="nav-item w-50 text-center">
+                    <a class="active" id="guarantee" data-toggle="tab" href="#guarantee-tab"><? pll_e('Гарантия') ?></a>
                 </li>
-                <li class="nav-item">
-                    <a id="settings" data-toggle="tab" href="#settings-tab"><? pll_e('Характеристики') ?></a>
-                </li>
-                <li class="nav-item">
-                    <a id="guarantee" data-toggle="tab" href="#guarantee-tab"><? pll_e('Гарантия') ?></a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item w-50 text-center">
                     <a id="review" data-toggle="tab" href="#review-tab"><? pll_e('Отзывы') ?></a>
                 </li>
             </ul>
             <div class="tab-content dynamic-content">
-                <div class="tab-pane description-tab fade active show" id="description-tab" role="tabpanel" itemprop="description">
-					<? the_post_content() ?>
-                </div>
-                <div class="tab-pane settings-tab fade" id="settings-tab" role="tabpanel">
-                    <table class="table-settings">
-						<? watch()->woo()->printAttributes( $product ) ?>
-                    </table>
-                </div>
-                <div class="tab-pane guarantee-tab" id="guarantee-tab" role="tabpanel">
+                <div class="tab-pane guarantee-tab ade active show" id="guarantee-tab" role="tabpanel">
 					<? the_field( 'guarantee', lang() ) ?>
                     <div>
                         <a href="<? the_field( 'guarantee_page', 'option' ) ?>" target="_blank"

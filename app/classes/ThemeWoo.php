@@ -179,32 +179,34 @@ class ThemeWoo
             }
             if ($attribute->get_visible()) :
                 ?>
-                <tr>
-                    <td><?= wc_attribute_label($attribute->get_name()) ?><sup> <?= $sup ?></sup></td>
-                    <td>
-                        <?
-                        $values = [];
-                        if ($attribute->is_taxonomy()) {
-                            $attribute_taxonomy = $attribute->get_taxonomy_object();
-                            $attribute_values = wc_get_product_terms($product->get_id(), $attribute->get_name(), array('fields' => 'all'));
-                            foreach ($attribute_values as $attribute_value) {
-                                $value_name = esc_html($attribute_value->name);
-                                if ($attribute_taxonomy->attribute_public) {
-                                    $values[] = '<a href="' . esc_url(get_term_link($attribute_value->term_id, $attribute->get_name())) . '" rel="tag">' . $value_name . '</a>';
-                                } else {
-                                    $values[] = $value_name;
+                <div class="col-sm-6 padding-m">
+                    <div class="setting-item">
+                        <div class="setting-name"><?= wc_attribute_label($attribute->get_name()) ?><sup> <?= $sup ?></sup></div>
+                        <div>
+                            <?
+                            $values = [];
+                            if ($attribute->is_taxonomy()) {
+                                $attribute_taxonomy = $attribute->get_taxonomy_object();
+                                $attribute_values = wc_get_product_terms($product->get_id(), $attribute->get_name(), array('fields' => 'all'));
+                                foreach ($attribute_values as $attribute_value) {
+                                    $value_name = esc_html($attribute_value->name);
+                                    if ($attribute_taxonomy->attribute_public) {
+                                        $values[] = '<a href="' . esc_url(get_term_link($attribute_value->term_id, $attribute->get_name())) . '" rel="tag">' . $value_name . '</a>';
+                                    } else {
+                                        $values[] = $value_name;
+                                    }
+                                }
+                            } else {
+                                $values = $attribute->get_options();
+                                foreach ($values as &$value) {
+                                    $value = make_clickable(esc_html($value));
                                 }
                             }
-                        } else {
-                            $values = $attribute->get_options();
-                            foreach ($values as &$value) {
-                                $value = make_clickable(esc_html($value));
-                            }
-                        }
 
-                        echo implode(', ', $values) ?>
-                    </td>
-                </tr>
+                            echo implode(', ', $values) ?>
+                        </div>
+                    </div>
+                </div>
             <? endif;
         endforeach;
     }

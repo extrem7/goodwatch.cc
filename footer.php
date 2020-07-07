@@ -55,6 +55,7 @@
     </div>
 </footer>
 <? get_template_part('views/modal') ?>
+
 <? wp_footer() ?>
 <script type="text/javascript" src="<?= path() ?>assets/node_modules/jquery-lazy/jquery.lazy.min.js"></script>
 <script type="text/javascript" src="<?= path() ?>assets/node_modules/jquery-lazy/jquery.lazy.plugins.min.js"></script>

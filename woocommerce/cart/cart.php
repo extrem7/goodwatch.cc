@@ -100,7 +100,7 @@
 		<?php } ?>
     </div>
 </form>
-<div class="cart-collaterals">
+<div class="cart-collaterals d-none">
 	<?php
 	/**
 	 * Cart collaterals hook.

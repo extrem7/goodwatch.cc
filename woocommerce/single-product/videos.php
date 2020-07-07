@@ -1,5 +1,5 @@
 <? if ( have_rows( 'videos' ) ): ?>
-    <div class="col-12 product-video">
+    <div class="product-video">
 		<? while ( have_rows( 'videos' ) ):the_row();
 			$embed = preg_replace( "/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", '$1', get_sub_field( 'youtube' ) );
 			$url   = 'https://www.youtube.com/embed/' . $embed;

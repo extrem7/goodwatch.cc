@@ -29,7 +29,7 @@ $comments = get_comments( [
 	?>
     </ul>
 	<? if ( count( $comments ) > 2 ): ?>
-    <a href="#" class="button btn-outline-black comments-load">Загрузить еще</a><? endif; ?>
+    <a href="#" class="button btn-outline-black comments-load"><? pll_e('Загрузить еще') ?></a><? endif; ?>
 <? else : ?>
     <p class="woocommerce-noreviews"><? _e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
 <? endif; ?>

@@ -93,6 +93,8 @@
                         <div class="red-color"><? pll_e('Гарантия') ?></div>
                         <div class="title main-title"><? pll_e('Сертифицированные товары') ?></div>
                           <div class="mt-3"><? the_field( 'guarantee' ) ?>
+                            <? $banners =  get_field( 'gallery_certificat');
+                              if ( ! empty( $banners ) ): ?>
 							<div class="owl-carousel owl-theme owl-cert" id="cert">
 								<? foreach ( get_field( 'gallery_certificat' ) as $img ): ?>
 									 <div class="item text-center">
@@ -103,6 +105,7 @@
 									</div>
 								<? endforeach; ?>
 							</div>
+                              <? endif; ?>
 						</div>
                         <img src="<?= path() ?>assets/img/icons/garanty.svg" class="mt-3" alt="guarantee">
                     </div>

@@ -345,6 +345,23 @@ class ThemeBase
 		pll_register_string('Цены', 'Цены');
 
         pll_register_string('Адрес', 'Адрес');
+        pll_register_string('Ваша оценка', 'Ваша оценка');
+        pll_register_string('скидка', 'скидка');
+
+        pll_register_string('До конца распродажи осталось:', 'До конца распродажи осталось:');
+
+        pll_register_string('Финальная распродажа -', 'Финальная распродажа -');
+        pll_register_string('Стильные часы', 'Стильные часы');
+        pll_register_string('Старая цена', 'Старая цена');
+
+        pll_register_string('Заказать со скидкой', 'Заказать со скидкой');
+        pll_register_string('Отзывы покупателей', 'Отзывы покупателей');
+
+        pll_register_string('Спасибо за ваш отзыв. Он был направлен на модерацию.', 'Спасибо за ваш отзыв. Он был направлен на модерацию.');
+
+        pll_register_string('Загрузить еще', 'Загрузить еще');
+        pll_register_string('Подпишись на <i class="fab fa-instagram"></i> <span>Инстаграм</span> и получи 5% скидки на любые часы', 'Подпишись на <i class="fab fa-instagram"></i> <span>Инстаграм</span> и получи 5% скидки на любые часы');
+
 
     }
 
